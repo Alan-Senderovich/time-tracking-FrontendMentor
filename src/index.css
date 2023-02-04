@@ -1,13 +1,204 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+  /* COLORS PRIMARY */
+  --blue: hsl(246, 80%, 60%);
+  --light-orange: hsl(15, 100%, 70%);
+  --light-blue: hsl(195, 74%, 62%);
+  --light-red: hsl(348, 100%, 68%);
+  --light-green: hsl(145, 58%, 55%);
+  --light-violet: hsl(264, 64%, 52%);
+  --light-yellow: hsl(43, 84%, 65%);
+
+  /* COLORS NEUTRAL */
+  --very-dark-blue: hsl(226, 43%, 10%);
+  --dark-blue: hsl(235, 46%, 20%);
+  --desatured-blue: hsl(235, 45%, 61%);
+  --pale-blue: hsl(236, 100%, 87%);
+
+  /* utils */
+  --font-titles: 18px;
+  --radius: .8rem;
+  --spacer-padding: 2vw 1.3vw;
+  /* 
+  --spacer-lg: clamp(4rem, 7vw, 7rem);
+  --rounded-sm: 0.2rem;
+  --rounded-md: 0.4rem; */
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  display: grid;
+  place-items: center;
+  place-content: center;
+  height: 100vh;
+  background-color: var(--very-dark-blue);
+  color: white;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-auto-flow: column;
+  place-items: center;
+  place-content: center;
+  background-color: transparent;
+  gap: 1rem;
+}
+
+/* Cards Container */
+.cards-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  place-items: center;
+  place-content: center;
+  width: 100%;
+  background-color: transparent;
+  gap: 1rem;
+}
+
+.card {
+  width: 100%;
+  text-align: center;
+  position: relative;
+  padding-top: 2.5rem;
+  border-radius: var(--radius);
+  padding-bottom: -10px;
+}
+
+.bg-orange {
+  background-color: var(--light-orange)
+}
+
+.bg-blue {
+  background-color: var(--light-blue)
+}
+
+.bg-red {
+  background-color: var(--light-red)
+}
+
+.bg-green {
+  background-color: var(--light-green)
+}
+
+.bg-violet {
+  background-color: var(--light-violet)
+}
+
+.bg-yellow {
+  background-color: var(--light-yellow)
+}
+
+.card-icon {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 1vw;
+  width: 30%;
+}
+
+.card-content {
+  position:relative;
+  background-color: var(--dark-blue);
+  z-index: 999;
+  border-radius: var(--radius);
+  padding: var(--spacer-padding);
+  border: 3px solid var(--dark-blue);
+  text-align: start;
+}
+
+.card-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.card-title h5 {
+  font-weight: 300;
+}
+
+.card-title img {
+  width: 20px;
+  height: 4px;
+}
+
+.card-value h1 {
+  font-weight: 300;
+  margin-right: 4.5vw;
+  margin-bottom: .3rem;
+}
+
+.card-period span {
+  font-size: .7rem;
+  color: #FAFAFAA8
+}
+
+/* Profile Container */
+.profile-container {
+  background-color: var(--dark-blue);
+  height: 100%;
+  width: 100%;
+  border-radius: var(--radius);
+}
+
+.profile-header {
+  background-color: var(--desatured-blue);
+  border-radius: var(--radius);
+  padding: var(--spacer-padding)
+}
+/* 
+--very-dark-blue: hsl(226, 43%, 10%);
+--dark-blue: hsl(235, 46%, 20%);
+--desatured-blue: hsl(235, 45%, 61%);
+--pale-blue: hsl(236, 100%, 87%); */
+
+.img-wrapper img{
+  border: 4px solid white;
+  border-radius: 50%;
+  width: 30%;
+  margin-bottom: 4vh;
+}
+
+.title-wrapper {
+  margin-bottom: 2.5rem;
+}
+
+.title-wrapper span {
+  color: #FAFAFAA8;
+  font-size: .8rem;
+}
+
+.title-wrapper h1 {
+  font-weight: 300;
+}
+
+.periods {
+  padding: var(--spacer-padding);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.periods button {
+  font-size: .8rem;
+  font-weight: 300;
+  color: #FAFAFAA8;
+  background-color: transparent;
+  border: none;
+  text-align: start;
+  cursor: pointer;
+}
+
+.periods button:hover {
+  color: #fff;
 }
