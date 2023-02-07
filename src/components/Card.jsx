@@ -9,11 +9,15 @@ const Card = ({ icon, bg, title, currentPeriod, previousPeriod, legend }) => {
           <h5>{title}</h5>
           <img src={iconDots} alt="" />
         </div>
-        <div className="card-value">
-          <h1>{currentPeriod}hrs</h1>
-        </div>
-        <div className="card-period">
-          <span>{legend} - {previousPeriod}hrs</span>
+        <div className="card-body">
+          <div className="card-value">
+            <h1>{currentPeriod}hrs</h1>
+          </div>
+          <div className="card-period">
+            <span>
+              {legend} - {previousPeriod}hrs
+            </span>
+          </div>
         </div>
       </div>
     </div>
